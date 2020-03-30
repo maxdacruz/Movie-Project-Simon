@@ -16,6 +16,11 @@
     <header>
         <?php require_once 'nav-bar.php'; ?>
     </header>
+    <section>
+        <h1>Welcome to our scuffed site</h1>
+        <label for="search">Search :</label> <br>
+        <input type="text" name="search" id="search">
+    </section>
 
     <section class="movies">
 
@@ -27,14 +32,30 @@
         </div>
 
     </section>
-
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script>
+        $(function() {
+            $('input[type="submit"]').click(function(e) {
+                console.log('test');
+                e.preventDefault();
+                $.ajax({
+                    url: 'search.php',
+                    type: 'post',
+                    data: {
+                        mysearch: $(this).val()
+                    },
+                    success: function(result) {
+                        console.log('ok');
+                        $('#result').html(result);
+                    },
+                    error: function(err) {
+                        console.log('notok');
+                        $('#result').html(result);
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
-
-<?php
-
-include_once 'database.php';
-$conn = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD, 'idk_movies');
-
-?>
