@@ -20,6 +20,7 @@
         <h1>Welcome to our scuffed site</h1>
         <label for="search">Search :</label> <br>
         <input type="text" name="search" id="search">
+        <div id="result"></div>
     </section>
 
     <section class="movies">
@@ -35,14 +36,14 @@
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script>
         $(function() {
-            $('input[type="submit"]').click(function(e) {
+            $('#search').keyup(function(e) {
                 console.log('test');
                 e.preventDefault();
                 $.ajax({
                     url: 'search.php',
                     type: 'post',
                     data: {
-                        mysearch: $(this).val()
+                        search: $('#search').val()
                     },
                     success: function(result) {
                         console.log('ok');
