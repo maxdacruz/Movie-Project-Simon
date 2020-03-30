@@ -11,8 +11,9 @@
 
 <body>
   <header>
-    <?php require_once 'nav-bar.php';
-    $_SESSION['logedin'] = false;
+    <?php
+    require_once 'nav-bar.php';
+
 
     ?>
   </header>
