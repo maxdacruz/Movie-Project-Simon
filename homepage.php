@@ -1,3 +1,12 @@
+
+<?php 
+include_once("nav-bar.php");
+include_once 'database.php';
+$conn = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD, 'idk_movies');
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,10 +31,3 @@
 
 </body>
 </html>
-
-<?php 
-
-include_once 'database.php';
-$conn = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD, 'idk_movies');
-
-?>
