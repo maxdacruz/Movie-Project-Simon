@@ -26,15 +26,15 @@ if (!empty($_POST)) {
     $admin = false;
     $pass = password_hash($_POST['psw'], PASSWORD_DEFAULT);
     $connect = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME);
+    var_dump($connect);
+    $query = "INSERT INTO users(last_name, first_name, email, hash, admin) 
+    VALUES('" . $_POST['fname'] . "', '" . $_POST['lname'] . "','" . $_POST['email'] . "','" . $pass . "'," . $admin . ")";
 
-    $query = "INSERT INTO users(name, first_name, email, hash, admin) 
-    VALUES('" . $_POST['fname'] . "', '" . $_POST['lname'] . "'," . $_POST['email'] . ",'" . $pass . ",'" . $admin . ")";
+    var_dump($query);
+    mysqli_query($connect, $query);
 
-
-    $result_query = mysqli_query($connect, $query);
-
-    echo 'regidtered';
+    echo 'registered';
   } else {
-    echo $errors;
+    echo var_dump($errors);
   }
 }
