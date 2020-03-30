@@ -43,19 +43,21 @@ $result2 = mysqli_query($connect, $query_movie);
 
     <section class="movies">
 
-        <div class="grid">
+        <div class="card">
             <?php
             while ($movie = mysqli_fetch_assoc($result2)) {
 
-                echo '<div class="card">';
-
+                echo '<div class="card-body">';
+                
                 echo ' <img src="' . $movie['poster'] . '" />';
 
                 echo ' <div>' . $movie['title'] .  '</div>';
+
+                echo '</div>';
             }
 
             ?>
-        </div>
+
         </div>
 
     </section>

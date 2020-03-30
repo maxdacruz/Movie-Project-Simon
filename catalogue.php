@@ -23,7 +23,7 @@ include_once("nav-bar.php");
     $MoviesQuery = "SELECT * FROM movie";
     $result = mysqli_query($connect, $MoviesQuery);
     $movies = mysqli_fetch_all($result, MYSQLI_ASSOC);
-    echo '<div class="card" style="width: 18rem;">';
+    echo '<div class="card">';
     foreach ($movies as $movie) {
         echo '<div class="card-body">';
         echo '<img src="' . $movie['poster'] . '" class="card-img-top" >';
