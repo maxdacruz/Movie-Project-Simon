@@ -1,0 +1,87 @@
+.nav {
+    display: block;
+    position: relative;
+    height: 64px; // defining the height so things will be positioned properly
+    border-bottom: 2px solid #323232;
+
+    // set same values for all used elements
+    & li::before, & li::after {
+        content: '';
+    }
+
+    // same as above
+    & a, & li::before, & li::after {
+        position: absolute;
+        display: inline-block;
+    }
+
+    & > ul {
+        display: flex;
+        overflow: hidden;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        // moving everythingto the left so the first item does not have too much empty space
+        margin-left: -32px;
+
+        & > li {
+            position: relative;
+            list-style: none;
+            flex: 1;
+
+            color: white;
+            background-color: #323232;
+
+            & > a {
+                color: inherit;
+                text-decoration: none;
+                left:100%;
+                margin-left:-50%;
+                bottom: -2px;
+
+                font-size: 24px;
+                font-weight: bold;
+            }
+            
+            // CSS is bae :D
+            // https://css-tricks.com/the-shapes-of-css/
+            &::after {
+                top: 50%;
+                left: 100%;
+                margin-top: -5rem;
+                border: 5rem solid transparent;
+                border-left: 5rem solid #323232;
+                z-index: 2; // the triangle is above the other elements
+            }
+
+            &::before {
+                content: '';
+                width: calc(100% + 5rem); // border-width to include the triangle
+                top: 50%;
+                margin-top: -1px; // moving the border back up to have it in the middle
+                border-top: 1px solid rgba(0, 0, 0, 1);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+                z-index: 3; // putting the effect border top
+            }
+
+            & + li::before {
+                width: 100%; // reset border width and push everything left
+                left: 5rem;
+            }
+
+            // matching the colors
+            &:nth-child(even) {
+                color: black;
+                background-color: #e3e3e3;
+                &::after {
+                    border-left-color: #e3e3e3;
+                }
+
+                &::before {
+                    border-top-color: rgba(0, 0, 0, .25);
+                    border-bottom-color: rgba(255, 255, 255, 1);
+                }
+            }
+        }
+    }
+}

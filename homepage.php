@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IDK Movies</title>
 
-    <link rel="stylesheet" href="app/style/main.css">
+    <link rel="stylesheet" href="app/style/imports/main.css">
 </head>
 
 <body>
@@ -26,8 +26,8 @@
 
         <div class="grid">
             <div class="card">
-                <img src="https://images-na.ssl-images-amazon.com/images/I/91NP3x-A2BL._SY445_.jpg" />
-                <div>Mov Title</div>
+                <img src="" />
+                <div></div>
             </div>
         </div>
 
