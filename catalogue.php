@@ -6,8 +6,7 @@
     $MoviesQuery = "SELECT * FROM movie";
     $result = mysqli_query($connect, $MoviesQuery);
     $movies = mysqli_fetch_all($result, MYSQLI_ASSOC);
-    var_dump($movies);
-
+    
     foreach ($movies as $movie) {
         echo '<img src="' . $movie['poster'] . '" class="card-img-top" >';
         echo '<div class="card-body">';
