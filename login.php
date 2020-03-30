@@ -1,3 +1,11 @@
+<?php
+session_start();
+if ($_SESSION['logedin']) {
+  header('Location: homepage.php');
+}
+var_dump($_SESSION);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +17,10 @@
 
 <body>
   <header>
-    <?php require_once 'nav-bar.php'; ?>
+    <?php require_once 'nav-bar.php';
+    $_SESSION['logedin'] = false;
+
+    ?>
   </header>
   <main>
     <form method="Post">
@@ -28,7 +39,7 @@
         console.log('test');
         e.preventDefault();
         $.ajax({
-          url: 'conect.php',
+          url: 'conect2.php',
           type: 'post',
           data: $('form').serialize(),
           success: function(result) {
