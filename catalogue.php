@@ -25,8 +25,8 @@ include_once("nav-bar.php");
     $movies = mysqli_fetch_all($result, MYSQLI_ASSOC);
     echo '<div class="card" style="width: 18rem;">';
     foreach ($movies as $movie) {
-        echo '<img src="' . $movie['poster'] . '" class="card-img-top" >';
         echo '<div class="card-body">';
+        echo '<img src="' . $movie['poster'] . '" class="card-img-top" >';
         echo '<h2 class="card-title">' . $movie['title'] . "</h2>";
         echo '<p class="card-text">' . $movie['release_year'] . "</p>";
         $string =  $movie['Synopsis'];
@@ -39,11 +39,10 @@ include_once("nav-bar.php");
         echo '<p class="card-text">' . $trimstring . ".</p>";
         echo '<p><strong>Details </strong>' .
 				'<a href="details.php?id=' . $movie['id'] . '">' . $movie['title'] . '</a></p>'; 
-        echo '<button class="addToPlaylist">Add to Playlist</button> <br></div>'; 
-        
+        echo '<button class="addToPlaylist">Add to Playlist</button> <br> </div>'; 
+
     }
     echo '</div>';
-    
     ?>
 </body>
 </html>

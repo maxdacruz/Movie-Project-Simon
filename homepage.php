@@ -1,4 +1,8 @@
 <?php
+require_once 'database.php';
+$connect = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME);
+$query = 'SELECT * FROM category LIMIT 5';
+$result = mysqli_query($connect, $query);
 
 ?>
 <!DOCTYPE html>
@@ -20,8 +24,17 @@
         <h1>Welcome to our scuffed site</h1>
         <label for="search">Search :</label> <br>
         <input type="text" name="search" id="search">
+        <h2>Results</h2>
         <div id="result"></div>
     </section>
+    <section>
+        <h2>categorys</h2>
+        <?php while ($category = mysqli_fetch_assoc($result)) {
+            echo "<p>" . $category['category'] . "</p> ";
+        }
+        ?>
+    </section>
+
 
     <section class="movies">
 
