@@ -42,6 +42,9 @@
           success: function(result) {
             console.log('ok');
             $('#result').html(result);
+            if (result == 'nice') {
+              window.location.href = "./homepage.php";
+            }
           },
           error: function(err) {
             console.log('notok');
