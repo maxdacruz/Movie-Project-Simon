@@ -1,11 +1,4 @@
-<?php
-session_start();
-if ($_SESSION['logedin']) {
-    header('Location: homepage.php');
-}
-var_dump($_SESSION);
 
-?>
 <?php
 include_once("nav-bar.php");
 $result_query = array();
