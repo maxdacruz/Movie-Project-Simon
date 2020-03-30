@@ -29,8 +29,9 @@ $result2 = mysqli_query($connect, $query_movie);
     <section>
         <h1>Welcome to our scuffed site</h1>
         <form>
-            <label for="search">Search :</label> <br>
-            <input type="text" id="search">
+            <label for="autocomplete">Search :</label>
+            <input type="text" id="autocomplete" name="autocomplete">
+            <input type="button" value="" id="lol">
         </form>
         <h2>Results</h2>
         <div id="result"></div>
@@ -87,11 +88,38 @@ $result2 = mysqli_query($connect, $query_movie);
                 });
             });
         });*/
+        $(function() {
 
-        $('#search').autocomplete({
-            source: 'search.php'
+            // Single Select
+            $("#autocomplete").autocomplete({
+                source: function(request, response) {
+                    // Fetch data
+                    $.ajax({
+                        url: "search.php",
+                        type: 'post',
+                        dataType: "json",
+                        data: {
+                            search: request.term
+                        },
+                        success: function(data) {
+                            response(data);
+                        }
+                    });
+                },
+                select: function(event, ui) {
+                    // Set selection
+                    $('#autocomplete').val(ui.item.label);
+                    $('#lol').val(ui.item.value);
 
-        });
+                    return false;
+                }
+            });
+
+        })
+        $('#lol').click(function() {
+            console.log($(this).val());
+            window.location.href = './details.php?id=' + $(this).val()
+        })
     </script>
 </body>
 
