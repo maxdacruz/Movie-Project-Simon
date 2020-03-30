@@ -1,7 +1,12 @@
 <?php
 require_once 'database.php';
 $connect = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME);
-$query = 'SELECT * FROM category LIMIT 5';
+$query = 'SELECT c.category, count(f.category_id) counter
+FROM category c left join movie f
+ON f.category_id = c.id
+GROUP BY c.id, c.category ORDER BY counter DESC LIMIT 5';
+
+
 $result = mysqli_query($connect, $query);
 
 ?>
@@ -30,7 +35,7 @@ $result = mysqli_query($connect, $query);
     <section>
         <h2>categorys</h2>
         <?php while ($category = mysqli_fetch_assoc($result)) {
-            echo "<p>" . $category['category'] . "</p> ";
+            echo "<p>" . $category['category'] . $category['counter'] . "</p> ";
         }
         ?>
     </section>
