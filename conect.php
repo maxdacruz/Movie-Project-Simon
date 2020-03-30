@@ -3,6 +3,7 @@ require_once 'database.php';
 $errors = array();
 
 if (!empty($_POST)) {
+  $connect = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME);
 
 
   if (empty($_POST['fname'])) {
@@ -21,16 +22,17 @@ if (!empty($_POST)) {
   if (($_POST['psw']) != ($_POST['psw2'])) {
     $errors[] = '<p style="color:red" >password don\'t match </p>';
   }
+  
+  if () {
+    # code...
+  }
 
   if (count($errors) === 0) {
-    $admin = false;
+    $admin = 0;
     $pass = password_hash($_POST['psw'], PASSWORD_DEFAULT);
-    $connect = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME);
-    var_dump($connect);
     $query = "INSERT INTO users(last_name, first_name, email, hash, admin) 
     VALUES('" . $_POST['fname'] . "', '" . $_POST['lname'] . "','" . $_POST['email'] . "','" . $pass . "'," . $admin . ")";
 
-    var_dump($query);
     mysqli_query($connect, $query);
 
     echo 'registered';
