@@ -20,3 +20,10 @@
 
 </body>
 </html>
+
+<?php 
+
+include_once 'database.php';
+$conn = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD, 'idk_movies');
+
+?>
