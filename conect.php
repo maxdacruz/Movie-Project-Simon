@@ -22,9 +22,12 @@ if (!empty($_POST)) {
   if (($_POST['psw']) != ($_POST['psw2'])) {
     $errors[] = '<p style="color:red" >password don\'t match </p>';
   }
-  
-  if () {
-    # code...
+  $query_user = "SELECT * FROM users WHERE email='" . $_POST['email'] . "' LIMIT 1";
+  $result = mysqli_query($connect, $query_user);
+  $user = mysqli_fetch_assoc($result);
+
+  if ($user['email'] == $_POST['email']) {
+    $errors[] = '<p style="color:red" >email already used </p>';
   }
 
   if (count($errors) === 0) {
@@ -37,6 +40,6 @@ if (!empty($_POST)) {
 
     echo 'registered';
   } else {
-    echo var_dump($errors);
+    echo implode('', $errors);
   }
 }
