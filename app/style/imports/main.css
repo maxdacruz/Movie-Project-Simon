@@ -127,7 +127,7 @@ body {
   bottom: -20px;
 }
 
-.card > .grid {
+.card > .card-body {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (120px)[9999];
@@ -136,7 +136,7 @@ body {
           column-gap: 12px;
 }
 
-.card > .grid > * {
+.card > .card-body > * {
   display: block;
   height: 120px;
 }

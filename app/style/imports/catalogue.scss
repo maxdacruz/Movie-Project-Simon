@@ -26,7 +26,7 @@
         bottom: -20px;
     }
 
-    & > .grid {
+    & > .card-body {
         display: grid;
         grid-template-columns: repeat(9999, 120px);
         column-gap: 12px;
