@@ -98,4 +98,46 @@ body {
   border-top-color: rgba(0, 0, 0, 0.25);
   border-bottom-color: white;
 }
+
+.card {
+  position: relative;
+  display: block;
+  margin: 2rem 0;
+  padding: 2rem 1rem;
+}
+
+.card::before, .card::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 20px;
+  left: 0;
+  background-color: black;
+  background-image: radial-gradient(#aeaeae 40%, transparent 45%);
+  background-size: 22px;
+  background-position: 0 0, 11px 11px;
+}
+
+.card::before {
+  top: -20px;
+}
+
+.card::after {
+  bottom: -20px;
+}
+
+.card > .grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (120px)[9999];
+      grid-template-columns: repeat(9999, 120px);
+  -webkit-column-gap: 12px;
+          column-gap: 12px;
+}
+
+.card > .grid > * {
+  display: block;
+  height: 120px;
+}
 /*# sourceMappingURL=main.css.map */
