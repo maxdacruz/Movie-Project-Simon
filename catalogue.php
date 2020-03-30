@@ -1,3 +1,6 @@
+<link rel="stylesheet" href="app/style/imports/main.css">
+
+
 <?php
     include_once("nav-bar.php");
     $result_query = array();
@@ -28,4 +31,4 @@
     
     
 
-   
+    
