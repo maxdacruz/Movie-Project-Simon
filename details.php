@@ -23,7 +23,6 @@ WHERE movie.id =" . $movid;
 if (isset($_GET['id'])){
     $results = mysqli_query($connect, $query);
     $movies = mysqli_fetch_assoc($results);
-    var_dump($movies);
     echo '<h1>'. $movies['title']. '</h1>';
     echo "<img width= 300 px src = " . $movies['poster'] . ">";
     echo "<p>".$movies['first_name']. $movies['last_name']. "</p>";
