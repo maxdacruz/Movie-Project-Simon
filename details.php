@@ -19,7 +19,7 @@ INNER JOIN category ON movie.category_id = category.id
 INNER JOIN actor ON movie.actor_id = actor.id
 WHERE movie.id =" . $movid;
 
-var_dump($query);
+//var_dump($query);
 if (isset($_GET['id'])){
     $results = mysqli_query($connect, $query);
     $movies = mysqli_fetch_assoc($results);
