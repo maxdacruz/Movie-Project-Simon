@@ -52,10 +52,12 @@ $result2 = mysqli_query($connect, $query_movie);
                 echo ' <img src="' . $movie['poster'] . '" />';
 
                 echo ' <div>' . $movie['title'] .  '</div>';
+
+                echo '</div>';
             }
 
             ?>
-        </div>
+
         </div>
 
     </section>

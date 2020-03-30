@@ -6,8 +6,7 @@
         "vars.scss",
         "nav.scss",
         "catalogue.scss",
-        "vars.scss",
-        "card.scss"
+        "vars.scss"
     ],
     "names": [],
     "file": "main.css"
