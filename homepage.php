@@ -18,7 +18,7 @@ $result2 = mysqli_query($connect, $query_movie);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IDK Movies</title>
-
+    <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/themes/smoothness/jquery-ui.css" />
     <link rel="stylesheet" href="app/style/imports/main.css">
 </head>
 
@@ -28,8 +28,10 @@ $result2 = mysqli_query($connect, $query_movie);
     </header>
     <section>
         <h1>Welcome to our scuffed site</h1>
-        <label for="search">Search :</label> <br>
-        <input type="text" name="search" id="search">
+        <form>
+            <label for="search">Search :</label> <br>
+            <input type="text" id="search">
+        </form>
         <h2>Results</h2>
         <div id="result"></div>
     </section>
@@ -48,7 +50,7 @@ $result2 = mysqli_query($connect, $query_movie);
             while ($movie = mysqli_fetch_assoc($result2)) {
 
                 echo '<div class="card-body">';
-                
+
                 echo ' <img src="' . $movie['poster'] . '" />';
 
                 echo ' <div>' . $movie['title'] .  '</div>';
@@ -61,9 +63,10 @@ $result2 = mysqli_query($connect, $query_movie);
         </div>
 
     </section>
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js"></script>
     <script>
-        $(function() {
+        /*$(function() {
             $('#search').keyup(function(e) {
                 console.log('test');
                 e.preventDefault();
@@ -83,6 +86,11 @@ $result2 = mysqli_query($connect, $query_movie);
                     }
                 });
             });
+        });*/
+
+        $('#search').autocomplete({
+            source: 'search.php'
+
         });
     </script>
 </body>
