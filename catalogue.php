@@ -1,8 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="app/style/imports/main.css">
-
-
+    <title>Catalogue</title>
+</head>
+<body>
+<header>
+<nav>
 <?php
-    include_once("nav-bar.php");
+include_once("nav-bar.php");
+?>
+</nav>
+
+</header>
+    
+<?php
     $result_query = array();
     require_once 'database.php';
     $connect = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME);
@@ -28,7 +42,11 @@
         echo '<button class="addToPlaylist">Add to Playlist</button> <br> <div>'; 
 
     }
-    
+    ?>
+</body>
+</html>
+
+
     
 
     
