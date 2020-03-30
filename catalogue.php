@@ -39,9 +39,11 @@ include_once("nav-bar.php");
         echo '<p class="card-text">' . $trimstring . ".</p>";
         echo '<p><strong>Details </strong>' .
 				'<a href="details.php?id=' . $movie['id'] . '">' . $movie['title'] . '</a></p>'; 
-        echo '<button class="addToPlaylist">Add to Playlist</button> <br> <div>'; 
-
+        echo '<button class="addToPlaylist">Add to Playlist</button> <br></div>'; 
+        
     }
+    echo '</div>';
+    
     ?>
 </body>
 </html>
