@@ -45,9 +45,7 @@ if (!empty($_POST)) {
 
     mysqli_query($connect, $query);
 
-    echo 'registered';
-
-    header('Location: homepage.php');
+    echo 'nice';
   } else {
     echo implode('', $errors);
   }

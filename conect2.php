@@ -28,7 +28,7 @@ if (!empty($_POST)) {
 
   if (count($errors) === 0) {
     $_SESSION['logedin'] = true;
-    echo 'loged in';
+    echo 'nice';
   } else {
     echo implode('', $errors);
   }
