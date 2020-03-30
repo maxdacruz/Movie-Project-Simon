@@ -28,7 +28,7 @@
         <div class="grid">
             <div class="card">
                 <img src="" />
-                <div></div>
+                <div>test title</div>
             </div>
         </div>
 

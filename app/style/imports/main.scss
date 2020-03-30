@@ -1,6 +1,21 @@
+@import 'vars';
+
+
+
 html, body {
     margin: 0;
     height: 100%;
+}
+
+html {
+    font-family: $base-font-family;
+    font-size: $base-font-size;
+    line-height: $base-line-height;
+}
+
+body {
+    font-size: 1rem;
+    background-color: $base-background-color;
 }
 
 @import 'nav.scss';
