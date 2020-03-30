@@ -13,7 +13,7 @@ $conn = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD, 'idk_movies');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IDK Movies</title>
 
-    <link rel="stylesheet" href="app/style/style.css">
+    <link rel="stylesheet" href="app/style/imports/main.css">
 </head>
 <body>
     
