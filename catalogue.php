@@ -6,14 +6,24 @@
     $MoviesQuery = "SELECT * FROM movie";
     $result = mysqli_query($connect, $MoviesQuery);
     $movies = mysqli_fetch_all($result, MYSQLI_ASSOC);
-    var_dump($movies);
-
+    
     foreach ($movies as $movie) {
         echo '<img src="' . $movie['poster'] . '" class="card-img-top" >';
         echo '<div class="card-body">';
         echo '<h2 class="card-title">' . $movie['title'] . "</h2>";
         echo '<p class="card-text">' . $movie['release_year'] . ".</p>";
-        echo '<p class="card-text">' . $movie['Synopsis'] . ".</p>";
+        $string =  $movie['Synopsis'];
+        if (strlen($string) > 30) {
+            $trimstring = substr($string, 0, 30). ' <a href="#">...</a>';
+            } else {
+            $trimstring = $string;
+            }
+            
+        echo '<p class="card-text">' . $trimstring . ".</p>";
         echo '<a href class="details">Details</a> <br>'; 
         echo '<button class="addToPlaylist">Add to Playlist</button> <br>'; 
     }
+    //Out
+    
+
+   

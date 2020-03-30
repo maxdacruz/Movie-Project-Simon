@@ -1,3 +1,11 @@
+<?php
+session_start();
+if ($_SESSION['logedin']) {
+  header('Location: homepage.php');
+}
+var_dump($_SESSION);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,18 +16,18 @@
 </head>
 
 <body>
+  <header>
+    <?php require_once 'nav-bar.php';
+    $_SESSION['logedin'] = false;
+
+    ?>
+  </header>
   <main>
     <form method="Post">
-      <label for="fname">First name:</label><br>
-      <input type="text" id="fname" name="fname"><br>
-      <label for="lname">Last name:</label><br>
-      <input type="text" id="lname" name="lname"><br>
       <label for="lname">Email:</label><br>
       <input type="email" id="email" name="email"><br>
       <label for="psw">Password:</label><br>
       <input type="password" id="psw" name="psw"><br>
-      <label for="psw2">Repeat Password:</label><br>
-      <input type="password" id="psw2" name="psw2">
       <input type="submit" value="Send">
     </form>
     <div id="result"></div>
@@ -31,7 +39,7 @@
         console.log('test');
         e.preventDefault();
         $.ajax({
-          url: 'conect.php',
+          url: 'conect2.php',
           type: 'post',
           data: $('form').serialize(),
           success: function(result) {
