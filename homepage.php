@@ -1,13 +1,14 @@
 <?php
 require_once 'database.php';
 $connect = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME);
-$query = 'SELECT c.category, count(f.category_id) counter
+$query_categ = 'SELECT c.category, count(f.category_id) counter
 FROM category c left join movie f
 ON f.category_id = c.id
 GROUP BY c.id, c.category ORDER BY counter DESC LIMIT 5';
+$query_movie =  'SELECT * FROM movie ORDER BY id DESC LIMIT 3';
 
-
-$result = mysqli_query($connect, $query);
+$result = mysqli_query($connect, $query_categ);
+$result2 = mysqli_query($connect, $query_movie);
 
 ?>
 <!DOCTYPE html>
@@ -40,14 +41,21 @@ $result = mysqli_query($connect, $query);
         ?>
     </section>
 
-
     <section class="movies">
 
         <div class="grid">
-            <div class="card">
-                <img src="" />
-                <div>test title</div>
-            </div>
+            <?php
+            while ($movie = mysqli_fetch_assoc($result2)) {
+
+                echo '<div class="card">';
+
+                echo ' <img src="' . $movie['poster'] . '" />';
+
+                echo ' <div>' . $movie['title'] .  '</div>';
+            }
+
+            ?>
+        </div>
         </div>
 
     </section>
