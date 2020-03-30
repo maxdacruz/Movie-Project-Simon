@@ -13,7 +13,7 @@
 
         <div class="grid">
             <div class="card">
-                <img src="https://images-na.ssl-images-amazon.com/images/I/91NP3x-A2BL._SY445_.jpg" />
+                <img src="" />
                 <div>Mov Title</div>
             </div>
         </div>
