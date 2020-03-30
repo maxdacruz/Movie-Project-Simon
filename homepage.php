@@ -3,7 +3,6 @@
 include_once("nav-bar.php");
 include_once 'database.php';
 $conn = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD, 'idk_movies');
-
 ?>
 
 
@@ -14,7 +13,7 @@ $conn = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD, 'idk_movies');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IDK Movies</title>
 
-    <link rel="stylesheet" href="app/style/main.css">
+    <link rel="stylesheet" href="app/style/style.css">
 </head>
 <body>
     
@@ -23,7 +22,7 @@ $conn = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD, 'idk_movies');
         <div class="grid">
             <div class="card">
                 <img src="" />
-                <div>Mov Title</div>
+                <div></div>
             </div>
         </div>
         
