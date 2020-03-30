@@ -1,6 +1,3 @@
-<?php
-var_dump($_SESSION);
-?>
 <nav class="nav">
 
     <ul>
