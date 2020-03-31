@@ -53,7 +53,7 @@
           data: $('form').serialize(),
           success: function(result) {
             console.log('ok');
-            $('#result').html(result);
+            window.location.href = "./playlist.php"
           },
           error: function(err) {
             console.log('notok');
