@@ -29,7 +29,7 @@ $result2 = mysqli_query($connect, $query_movie);
     <section class="homepage-search">
         <h1>Welcome to our scuffed site</h1>
         <form>
-            <label for="autocomplete" >Search :</label>
+            <label for="autocomplete">Search :</label>
             <input type="text" id="autocomplete" name="autocomplete">
             <button type="submit" value="test" id="lols">Go</button>
         </form>
@@ -45,7 +45,7 @@ $result2 = mysqli_query($connect, $query_movie);
 
     <h2 class="homepage-title">Last movies added</h2>
     <section class="movies">
-        
+
         <div class="grid">
             <?php
             while ($movie = mysqli_fetch_assoc($result2)) {
