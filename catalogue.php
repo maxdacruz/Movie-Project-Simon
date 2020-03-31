@@ -18,11 +18,20 @@
 
     </header>
 
-    <div> <button id="test">Sort by Date</button></div>
+    <div>
+        <form method="get">
+            <input type="button" value="DESC" name="test">
+            <input type="button" value="ASC" name="test">
+
+        </form>
+    </div>
 
     <?php
 
-    if (isset('#test')) {
+    if (isset($GET)) {
+        $order = $_GET['test'];
+    } else {
+        $order = 'ASC';
     }
 
 
@@ -34,7 +43,7 @@
     $limit = $_GET['limit'] ? $_GET['limit'] : 0;
     $prev = $limit - 5;
     $next = $limit + 5;
-    $MoviesQuery = "SELECT * FROM movie LIMIT $limit,$next";
+    $MoviesQuery = "SELECT * FROM movie ORDER BY release_year $order  LIMIT $limit,$next";
     $result = mysqli_query($connect, $MoviesQuery);
     $movies = mysqli_fetch_all($result, MYSQLI_ASSOC);
 

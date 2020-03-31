@@ -1,4 +1,6 @@
-<?php session_start() ?>
+<?php session_start();
+var_dump($_SESSION);
+?>
 <nav class="nav">
 
     <ul>
@@ -15,4 +17,4 @@
 
 
     </ul>
-  </nav>
+</nav>
