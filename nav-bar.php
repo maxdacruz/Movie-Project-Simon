@@ -3,7 +3,7 @@
 
     <ul>
         <li><a href="./homepage.php">Home</a></li>
-        <li><a href="./catalogue.php">Movies</a></li>
+        <li><a href="./catalogue.php?limit=5">Movies</a></li>
         <?php if (!isset($_SESSION['logedin'])) {
             echo '<li><a href="./login.php">Login</a></li>';
             echo '<li><a href="./register.php">Register</a></li>';
