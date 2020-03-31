@@ -1,6 +1,5 @@
 <?php
 session_start();
-$_SESSION['logedin'] = false;
 
 require_once 'database.php';
 $errors = array();
@@ -28,6 +27,7 @@ if (!empty($_POST)) {
 
   if (count($errors) === 0) {
     $_SESSION['logedin'] = true;
+    $_SESSION['userid'] = $user['id'];
     echo 'nice';
   } else {
     echo implode('', $errors);

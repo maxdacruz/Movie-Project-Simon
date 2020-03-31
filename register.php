@@ -43,7 +43,7 @@
             console.log('ok');
             $('#result').html(result);
             if (result == 'nice') {
-              window.location.href = "./homepage.php";
+              window.location.href = "./login.php";
             }
           },
           error: function(err) {
