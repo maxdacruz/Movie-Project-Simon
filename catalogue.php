@@ -18,14 +18,16 @@
 
     </header>
 
+    <div> <button id="test">Sort by Date</button></div>
+
     <?php
 
-
+    if (isset('#test')) {
+    }
 
 
     require_once 'database.php';
     $connect = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME);
-    //$MoviesQuery = "SELECT * FROM movie";
 
 
 
@@ -61,8 +63,8 @@
 
 
 
-    if ($limit >= 5) echo '<a href="catalogue?limit=' . $prev . '">Next</a>';
-    echo '<a href="catalogue?limit=' . $next . '">Back</a>';
+    if ($limit >= 5) echo '<a href="catalogue?limit=' . $prev . '">back</a>';
+    echo '<a href="catalogue?limit=' . $next . '">next</a>';
     ?>
 
 </body>
