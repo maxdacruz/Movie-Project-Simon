@@ -108,8 +108,7 @@
                         selected: $('#playlist option:selected').val()
                     },
                     success: function(result) {
-                        $('#result').html(result);
-                        console.log(result);
+                        console.log('ok');
                     },
                     error: function(err) {
                         console.log('notok');
