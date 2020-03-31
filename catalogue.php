@@ -18,14 +18,16 @@
 
     </header>
 
+    <div> <button id="test">Sort by Date</button></div>
+
     <?php
 
-
+    if (isset('#test')) {
+    }
 
 
     require_once 'database.php';
     $connect = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME);
-    //$MoviesQuery = "SELECT * FROM movie";
 
 
 
@@ -45,7 +47,7 @@
         echo '<p class="card-text">' . $movie['release_year'] . "</p>";
         $string =  $movie['Synopsis'];
         if (strlen($string) > 30) {
-            $trimstring = substr($string, 0, 30) . ' <a href="#">...</a>';
+            $trimstring = substr($string, 0, 30) . ' <span>...</span>';
         } else {
             $trimstring = $string;
         }
@@ -63,9 +65,10 @@
 
 
 
-    if ($limit >= 5) echo '<a href="catalogue?limit=' . $prev . '">Next</a>';
-    echo '<a href="catalogue?limit=' . $next . '">Back</a>';
+    if ($limit >= 5) echo '<a href="catalogue?limit=' . $prev . '">back</a>';
+    echo '<a href="catalogue?limit=' . $next . '">next</a>';
     ?>
+
 </body>
 
 </html>
