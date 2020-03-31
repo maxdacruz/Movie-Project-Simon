@@ -32,10 +32,9 @@
   $result = mysqli_query($connect, $playlistquery);
   $playlists = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
-  var_dump($playlists);
   foreach ($playlists as $playlist) {
     echo "<div id='result'>";
-    echo '<h2>' . $playlist['Title'] . "</h2>";
+    echo '<h2>' . $playlist['name'] . "</h2>";
     echo '<h3>' . $playlist['release_year'] . "</h3>";
     echo "</div>";
   }
