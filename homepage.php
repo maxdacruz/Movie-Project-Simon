@@ -31,7 +31,7 @@ $result2 = mysqli_query($connect, $query_movie);
         <form>
             <label for="autocomplete">Search :</label>
             <input type="text" id="autocomplete" name="autocomplete">
-            <input type="button" value="" id="lol">
+            <button type="submit" value="test" id="lols">Go</button>
         </form>
         <h2>Results</h2>
         <div id="result"></div>
@@ -109,14 +109,15 @@ $result2 = mysqli_query($connect, $query_movie);
                 select: function(event, ui) {
                     // Set selection
                     $('#autocomplete').val(ui.item.label);
-                    $('#lol').val(ui.item.value);
+                    $('#lols').val(ui.item.value);
 
                     return false;
                 }
             });
 
         })
-        $('#lol').click(function() {
+        $('#lols').click(function(e) {
+            event.preventDefault();
             console.log($(this).val());
             window.location.href = './details.php?id=' + $(this).val()
         })
