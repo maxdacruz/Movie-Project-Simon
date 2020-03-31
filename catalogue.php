@@ -85,6 +85,7 @@
         echo '</select>';
         echo '<input type="submit" value="Add to Playlist">';
         echo '</div>';
+        echo '</div>';
     }
 
     echo '</div>';
