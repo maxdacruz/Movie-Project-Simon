@@ -1,6 +1,5 @@
 <?php
 session_start();
-$_SESSION['logedin'] = false;
 
 require_once 'database.php';
 $errors = array();
@@ -37,7 +36,6 @@ if (!empty($_POST)) {
   }
 
   if (count($errors) === 0) {
-    $_SESSION['logedin'] = true;
     $admin = 0;
     $pass = password_hash($_POST['psw'], PASSWORD_DEFAULT);
     $query = "INSERT INTO users(last_name, first_name, email, hash, admin) 
