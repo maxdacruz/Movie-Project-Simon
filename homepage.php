@@ -45,12 +45,12 @@ $result2 = mysqli_query($connect, $query_movie);
     </section>
 
     <section class="movies">
-
-        <div class="card">
+        
+        <div class="grid">
             <?php
             while ($movie = mysqli_fetch_assoc($result2)) {
 
-                echo '<div class="card-body">';
+                echo '<div class="card">';
 
                 echo ' <img src="' . $movie['poster'] . '" />';
 
@@ -64,6 +64,8 @@ $result2 = mysqli_query($connect, $query_movie);
         </div>
 
     </section>
+
+    
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js"></script>
     <script>

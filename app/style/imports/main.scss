@@ -18,6 +18,16 @@ body {
     background-color: $base-background-color;
 }
 
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
 @import 'nav.scss';
 @import 'catalogue.scss';
 @import 'vars.scss';
+@import 'card.scss';
