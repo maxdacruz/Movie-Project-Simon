@@ -50,8 +50,8 @@
     echo '<section class="movies">';
     echo '<div class="grid">';
     foreach ($movies as $movie) {
-        echo '<div class="card">';
-        echo '<img src="' . $movie['poster'] . '" >';
+        echo '<div class="card-details">';
+        echo '<img src="' . $movie['poster'] . '" class="img-details">';
         echo '<h2 class="card-title">' . $movie['title'] . "</h2>";
         echo '<p class="card-text">' . $movie['release_year'] . "</p>";
         $string =  $movie['Synopsis'];
