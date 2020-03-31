@@ -42,7 +42,7 @@
   $synopsis = $_POST['synopsis'];
   $addmovie = "INSERT INTO movie(title,poster,category_id,actor_id,release_year,synopsis) VALUES('" . $title . "','" . $poster . "', '1','2','". $releaseyear."','".$synopsis."')";
   $result = mysqli_query($connect, $addmovie);
-  var_dump($addmovie);
+  
   }
 
   ?>
