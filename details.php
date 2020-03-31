@@ -22,16 +22,22 @@ INNER JOIN category ON movie.category_id = category.id
 INNER JOIN actor ON movie.actor_id = actor.id
 WHERE movie.id =" . $movid;
 
+
 //var_dump($query);
 if (isset($_GET['id'])){
     $results = mysqli_query($connect, $query);
     $movies = mysqli_fetch_assoc($results);
     echo '<h1>'. $movies['title']. '</h1>';
-    echo "<img width= 300 px src = " . $movies['poster'] . ">";
+    echo '<div class="details-complete">';
+    echo '<div class="detail-img-div">';
+    echo "<img class='details-img' src = " . $movies['poster'] . ">";
+    echo '</div>';
+    echo '<div class="detail-text-div">';
     echo "<p>".$movies['first_name']. $movies['last_name']. "</p>";
     echo "<p>".$movies['Synopsis']."</p>";
     echo "<p>".$movies['category']."</p>";
 
+    echo '</div>';
 }
 
 ?>

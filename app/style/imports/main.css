@@ -194,4 +194,14 @@ img {
   text-align: center;
   padding-bottom: 1rem;
 }
+
+.detail-text-div {
+  display: inline-block;
+  width: 50%;
+}
+
+.detail-img-div {
+  display: inline-block;
+  width: 50%;
+}
 /*# sourceMappingURL=main.css.map */
