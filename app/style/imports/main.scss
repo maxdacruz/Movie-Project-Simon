@@ -7,6 +7,9 @@ html, body {
     height: 100%;
 }
 
+main {
+    margin: 1rem;
+}
 html {
     font-family: $base-font-family;
     font-size: $base-font-size;
@@ -27,8 +30,23 @@ img {
     height: 100%;
 }
 
+.homepage-search,
+ .homepage-categories,
+ .details-title {
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+}
+
+.homepage-title {
+    padding-left: 1rem;
+    margin-top: 0;
+}
+
+.filter {
+    margin: 1rem;
+}
 @import 'nav.scss';
 @import 'catalogue.scss';
 @import 'vars.scss';
 @import 'card.scss';
-@import 'details.scss';
+@import 'details.scss'

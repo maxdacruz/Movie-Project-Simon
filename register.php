@@ -24,7 +24,7 @@
       <label for="psw">Password:</label><br>
       <input type="password" id="psw" name="psw"><br>
       <label for="psw2">Repeat Password:</label><br>
-      <input type="password" id="psw2" name="psw2">
+      <input type="password" id="psw2" name="psw2"><br>
       <input type="submit" value="Send">
     </form>
     <div id="result"></div>

@@ -15,7 +15,7 @@
     ?>
     </header>
 
-    <div>
+    <div class="filter">
         <form method="get">
             <input type="button" value="DESC" name="test">
             <input type="button" value="ASC" name="test">
@@ -60,7 +60,7 @@
         echo '<img src="' . $movie['poster'] . '" class="img-details">';
         echo '<div class="card-details">';
         echo '<h2 class="card-title">' . $movie['title'] . "</h2>";
-        echo '<p class="card-text">' . $movie['release_year'] . "</p>";
+        echo '<p class="card-text"> <strong>Release Year </strong><br>' . $movie['release_year'] . "</p>";
         $string =  $movie['Synopsis'];
         if (strlen($string) > 30) {
             $trimstring = substr($string, 0, 30) . ' <span>...</span>';

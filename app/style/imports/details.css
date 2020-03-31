@@ -1,10 +1,13 @@
 .detail-text-div {
   display: inline-block;
-  width: 120px;
+  width: 50%;
+  vertical-align: top;
+  padding: 1rem;
 }
 
 .detail-img-div {
   display: inline-block;
-  width: 120px;
+  width: 300px;
+  padding: 1rem;
 }
 /*# sourceMappingURL=details.css.map */

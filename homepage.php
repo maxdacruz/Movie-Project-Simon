@@ -26,16 +26,16 @@ $result2 = mysqli_query($connect, $query_movie);
     <header>
         <?php require_once 'nav-bar.php'; ?>
     </header>
-    <section>
+    <section class="homepage-search">
         <h1>Welcome to our scuffed site</h1>
         <form>
-            <label for="autocomplete">Search :</label>
+            <label for="autocomplete" >Search :</label>
             <input type="text" id="autocomplete" name="autocomplete">
             <button type="submit" value="test" id="lols">Go</button>
         </form>
         <div id="result"></div>
     </section>
-    <section>
+    <section class="homepage-categories">
         <h2>Categories</h2>
         <?php while ($category = mysqli_fetch_assoc($result)) {
             echo "<p>" . $category['category'] . ' ' . $category['counter'] . "</p> ";
@@ -43,6 +43,7 @@ $result2 = mysqli_query($connect, $query_movie);
         ?>
     </section>
 
+    <h2 class="homepage-title">Last movies added</h2>
     <section class="movies">
         
         <div class="grid">

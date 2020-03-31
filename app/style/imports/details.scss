@@ -1,13 +1,12 @@
 .detail-text-div {
     display: inline-block;
-    width: 120px;
-}
-
-.detail-img-div {
+    width: 50%;
+    vertical-align: top;
+    padding: 1rem;
+  }
+  
+  .detail-img-div {
     display: inline-block;
-    width: 120px;
-}
-
-.details-complete {
-
-}
+    width: 300px;
+    padding: 1rem;
+  }
