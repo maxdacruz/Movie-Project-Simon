@@ -10,6 +10,7 @@
         } ?>
         <?php if (isset($_SESSION['logedin'])) {
             echo '<li><a  href="./logout.php">Log Out</a></li>';
+            echo '<li><a href="./playlist.php">Playlist</a></li>';
         } ?>
 
 
