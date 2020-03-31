@@ -44,7 +44,7 @@
         echo '<p class="card-text">' . $movie['release_year'] . "</p>";
         $string =  $movie['Synopsis'];
         if (strlen($string) > 30) {
-            $trimstring = substr($string, 0, 30) . ' <a href="#">...</a>';
+            $trimstring = substr($string, 0, 30) . ' <span>...</span>';
         } else {
             $trimstring = $string;
         }
@@ -64,6 +64,7 @@
     if ($limit >= 5) echo '<a href="catalogue?limit=' . $prev . '">Next</a>';
     echo '<a href="catalogue?limit=' . $next . '">Back</a>';
     ?>
+
 </body>
 
 </html>
