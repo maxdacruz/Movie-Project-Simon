@@ -28,11 +28,11 @@
       <input type="date" id="releaseyear" name="releaseyear"><br>
       <label for="synopsis">Synopsis:</label><br>
       <input type="text" id="synopsis" name="synopsis"><br>
-       <input type="submit" value="Add">
+       <input type="submit" value="Add"name = "addbutton">
     </form>
   <?php 
   include_once("database.php");
-  
+  if (isset($_POST['addbutton'])) {
   $connect = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME);
   $title = $_POST['title'];
   $poster =$_POST['poster'];
@@ -43,6 +43,7 @@
   $addmovie = "INSERT INTO movie(title,poster,category_id,actor_id,release_year,synopsis) VALUES('" . $title . "','" . $poster . "', '1','2','". $releaseyear."','".$synopsis."')";
   $result = mysqli_query($connect, $addmovie);
   var_dump($addmovie);
+  }
 
   ?>
     <div id="result"></div>
