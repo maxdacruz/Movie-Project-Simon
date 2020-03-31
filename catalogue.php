@@ -38,10 +38,11 @@
     $result = mysqli_query($connect, $MoviesQuery);
     $movies = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
-    echo '<div class="card">';
+    echo '<section class="movies">';
+    echo '<div class="grid">';
     foreach ($movies as $movie) {
-        echo '<div class="card-body">';
-        echo '<img src="' . $movie['poster'] . '" class="card-img-top" >';
+        echo '<div class="card">';
+        echo '<img src="' . $movie['poster'] . '" >';
         echo '<h2 class="card-title">' . $movie['title'] . "</h2>";
         echo '<p class="card-text">' . $movie['release_year'] . "</p>";
         $string =  $movie['Synopsis'];
@@ -58,6 +59,7 @@
     }
 
     echo '</div>';
+    echo '</section>';
 
     //pagination
 
