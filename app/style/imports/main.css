@@ -140,10 +140,8 @@ img {
 .movies > .grid {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (120px)[9999];
-      grid-template-columns: repeat(9999, 120px);
-  -webkit-column-gap: 12px;
-          column-gap: 12px;
+  grid-template-columns: repeat(9999, 120px);
+  column-gap: 12px;
 }
 
 .movies > .grid > * {
