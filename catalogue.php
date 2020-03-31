@@ -92,6 +92,7 @@
     echo '</section>';
 
     ?>
+    <div id="result"></div>
 
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script>
@@ -102,11 +103,13 @@
                 $.ajax({
                     url: 'addtoplaylist.php',
                     type: 'post',
+                    dataType: "html",
                     data: {
-                        selected: $('#select option:selected').val()
+                        selected: $('#playlist option:selected').val()
                     },
                     success: function(result) {
-                        console.log('ok');
+                        $('#result').html(result);
+                        console.log(result);
                     },
                     error: function(err) {
                         console.log('notok');
