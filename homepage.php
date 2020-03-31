@@ -33,13 +33,12 @@ $result2 = mysqli_query($connect, $query_movie);
             <input type="text" id="autocomplete" name="autocomplete">
             <button type="submit" value="test" id="lols">Go</button>
         </form>
-        <h2>Results</h2>
         <div id="result"></div>
     </section>
     <section>
-        <h2>categorys</h2>
+        <h2>Categories</h2>
         <?php while ($category = mysqli_fetch_assoc($result)) {
-            echo "<p>" . $category['category'] . $category['counter'] . "</p> ";
+            echo "<p>" . $category['category'] . ' ' . $category['counter'] . "</p> ";
         }
         ?>
     </section>
@@ -65,7 +64,7 @@ $result2 = mysqli_query($connect, $query_movie);
 
     </section>
 
-    
+
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js"></script>
     <script>

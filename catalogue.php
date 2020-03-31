@@ -10,20 +10,16 @@
 
 <body>
     <header>
-
-        <?php
-        include_once("nav-bar.php");
-        ?>
-
-
+    <?php
+    include_once("nav-bar.php");
+    ?>
     </header>
 
     <div> <button id="test">Sort by Date</button></div>
 
     <?php
 
-    if (isset('#test')) {
-    }
+ 
 
 
     require_once 'database.php';
@@ -39,10 +35,20 @@
     $movies = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
     echo '<section class="movies">';
+    //pagination
+
+    echo '<div class="pagination">';
+
+    if ($limit >= 5) echo '<a href="catalogue?limit=' . $prev . '">back</a> ';
+    echo '<a href="catalogue?limit=' . $next . '">next</a>';
+    echo '</div>';
+    
     echo '<div class="grid">';
+    
     foreach ($movies as $movie) {
-        echo '<div class="card-details">';
+        echo '<div>';
         echo '<img src="' . $movie['poster'] . '" class="img-details">';
+        echo '<div class="card-details">';
         echo '<h2 class="card-title">' . $movie['title'] . "</h2>";
         echo '<p class="card-text">' . $movie['release_year'] . "</p>";
         $string =  $movie['Synopsis'];
@@ -53,20 +59,15 @@
         }
 
         echo '<p class="card-text">' . $trimstring . ".</p>";
-        echo '<p><strong>Details </strong>' .
+        echo '<p><strong>Details </strong>' . '<br>' .
             '<a href="details.php?id=' . $movie['id'] . '">' . $movie['title'] . '</a></p>';
         echo '<button class="addToPlaylist">Add to Playlist</button> <br> </div>';
+        echo '</div>';
     }
 
     echo '</div>';
     echo '</section>';
 
-    //pagination
-
-
-
-    if ($limit >= 5) echo '<a href="catalogue?limit=' . $prev . '">back</a>';
-    echo '<a href="catalogue?limit=' . $next . '">next</a>';
     ?>
 
 </body>

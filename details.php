@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Details</title>
+<link rel="stylesheet" href="app/style/imports/main.css">
 </head>
 <body>
 <header>
 
+        <?php require_once 'nav-bar.php'; ?>
 </header>
+
 <?php 
 require_once("database.php");
 $connect = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME);
