@@ -28,7 +28,7 @@
     echo '<img src="' . $car['photo'] . '">';
     echo '<p>' . $car['price'] . '</p>';
     echo '<p>' . $car['type'] . '</p>';
-    echo '<a href="editcar.php?id=' . $car['id'] . '">EDIT</a>';
+    echo '<a href="editcar.php?car=' . $car['id'] . '">EDIT</a>';
     echo '<form method="post">';
     echo '<input type="hidden" name="lol" value="' . $car['id'] . '">';
     echo '<input name="delete" type="submit" value="delete">';
@@ -41,7 +41,7 @@
     $querydelete = 'DELETE FROM cars WHERE id =' . $_POST['lol'];
 
     mysqli_query($connect, $querydelete);
-    var_dump(mysqli_query($connect, $querydelete));
+    header("Refresh:0");
   }
 
   ?>

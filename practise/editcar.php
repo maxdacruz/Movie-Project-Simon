@@ -2,7 +2,7 @@
 
 // $_GET gets the variable inside the url link in this example it gets the id inside the url
 
-$carid = $_GET['id'];
+$carid = $_GET['car'];
 require_once 'database.php';
 
 $connect = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME);
